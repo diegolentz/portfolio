@@ -21,7 +21,7 @@ export const Home = () => {
                 <header>
                     <div className="about">
                         <div className="img">
-                            <img src="../../public/fotocv.jpeg" alt="" />
+                            <img src="/fotocv.jpeg" alt="" />
                         </div>
                         <div className="description">
                             <h3>Hi, I'm Diego Lentz</h3>
