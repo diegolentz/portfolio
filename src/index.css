@@ -12,6 +12,7 @@ body {
 	font-family: "Lato", sans-serif;
 	background: var(--body-color);
 	color: var(--title-color);
+	overflow-x: hidden;
 
 }
 

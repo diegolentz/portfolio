@@ -77,25 +77,25 @@ header{
     margin-bottom: 3rem;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    margin: 2rem auto 0 auto;
-}
 .skills {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 3rem;
+    width: 90%;
 }
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .skills h4 {
     align-self: flex-start;
+}
+
+.skills h3 {
+    align-self: center;
 }
 
 .cards {
@@ -103,14 +103,15 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 20rem));
     grid-auto-rows: 15rem;
     gap: 2rem;
-    width: 100%;
-    padding: 2rem;
     background-color: var(--fondo-color);
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
 
+.cards p {
+    font-weight: bold;
 }
 
 .card{
@@ -122,11 +123,19 @@ section {
     text-align: center;
     gap: 1rem;
     padding: 2rem;
+
+    
 }
 
 .card img {
-    width: 60%;
-    height: 60%;
     object-fit: contain;
     border-radius: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.card img:hover {
+    background-color: var(--white-color);
+    transform: scale(1.08);
+    border-radius: 1rem;
+}
+

@@ -54,7 +54,7 @@ export const Home = () => {
                         </div>
                         {/* JavaScript */}
                         <div className='card'>
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="JavaScript" width="60" height="60"/>
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="60" height="60"/>
                            <p>JavaScript</p>
                         </div>
                         {/* C */}
@@ -144,10 +144,7 @@ export const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className='projects'>
-                    <h3>Featured Projects</h3>
-                    {/* Aquí puedes agregar tus proyectos destacados */}
-                </section>
+             
             </div>
         </>
     )
