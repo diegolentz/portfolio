@@ -108,8 +108,8 @@ export const Home = () => {
                                 right: '0px',
                                 left: 'unset',
                                 border: '0.5px solid rgba(255, 255, 255, 0.2)',
-                                borderTop: 'none', // <-- quita el borde de arriba
-                                zIndex: 2000, // Asegura que el menú esté por encima de otros elementos
+                                borderTop: 'none',
+                                zIndex: 2000,
                             },
                         }}
                     >
@@ -149,17 +149,19 @@ export const Home = () => {
                             <img src="/fotocv.jpeg" alt="Foto de Diego Lentz" />
                         </div>
                         <div className="description">
-                            <h3>Hi, I'm Diego Lentz</h3>
-                            <p>Software Developer</p>
-                            <p>Experienced in building scalable web applications and passionate about technology.</p>
-                            <p>Detail-oriented and committed to writing clean, maintainable code.</p>
-                            <p>Strong problem-solving skills and a collaborative team player.</p>
+                            <h3>Hola, soy Diego Lentz</h3>
+                            <div>
+                                <p>Desarrollador de Software</p>
+                                <p>Con experiencia en el desarrollo de aplicaciones web escalables y apasionado por la tecnología.</p>
+                                <p>Con sólidas habilidades para resolver problemas y gran capacidad para el trabajo en equipo.</p>
+                                <p>Busco constantemente aprender y mejorar mis habilidades para contribuir al éxito de proyectos innovadores.</p>
+                            </div>
                         </div>
                     </div>
                 </header>
 
                 <section className='skills' id='skills'>
-                    <h3>Skills</h3>
+                    <h3>Habilidades</h3>
                     <h4>Lenguajes & Frameworks</h4>
                     <div className='cards'>
                         {/* Java */}
@@ -214,7 +216,7 @@ export const Home = () => {
                         </div>
                     </div>
 
-                    <h4>Tools & Plataforms</h4>
+                    <h4>Herramientas & Plataformas</h4>
                     <div className='cards'>
                         {/* Git */}
                         <div className='card'>
@@ -270,7 +272,7 @@ export const Home = () => {
                     </div>
                 </section>
                 <section className='proyects' id='proyects'>
-                    <h3>Proyects</h3>
+                    <h3>Proyectos</h3>
                     <div className="containerDetalleProducto">
                         <div className="data">
                             <img
@@ -287,7 +289,7 @@ export const Home = () => {
                                 ))}
                             </div>
 
-                            <button className='verMas'>See More</button>
+                            <button className='verMas'>Ver mas</button>
                         </div>
 
                     </div>
@@ -302,7 +304,7 @@ export const Home = () => {
                 </section>
 
                 <section className="contact" id='contact'>
-                    <h3>Contact</h3>
+                    <h3>Contacto</h3>
                     <div className="contactDownlad">
                         <form action="" className='formulario'>
                             <input
@@ -319,7 +321,7 @@ export const Home = () => {
                                 className="subject"
                                 placeholder="Description"
                             />
-                            <button className="btn">Send</button>
+                            <button className="btn">Enviar</button>
 
                         </form>
                         <div className='download'>
