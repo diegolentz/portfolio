@@ -63,10 +63,10 @@ export const Home = () => {
                     <p className="name">Diego Lentz</p>
                 </div>
                 <div className="navLinks">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#proyects">Proyects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#about">Sobre mi</a>
+                    <a href="#skills">Habilidades</a>
+                    <a href="#proyects">Proyectos</a>
+                    <a href="#contact">Contacto</a>
                 </div>
                 <div className="burger">
                     <Button
