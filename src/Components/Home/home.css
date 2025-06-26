@@ -292,6 +292,12 @@ section {
     background-color: var(--fondo-color);
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 1.8rem;
+}
+
+.campo::placeholder,
+.subject::placeholder {
+    font-size: 1.8rem;
 }
 
 .subject {

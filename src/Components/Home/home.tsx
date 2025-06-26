@@ -201,10 +201,10 @@ export const Home = () => {
                     </div>
                     <div className="controlers">
                         <button onClick={previousItem} className="anterior">
-                            <UndoOutlinedIcon style={{ fontSize: 25 }} />
+                            <UndoOutlinedIcon style={{ fontSize: 20 }} />
                         </button>
                         <button onClick={nextItem} className="siguiente">
-                            <RedoOutlinedIcon style={{ fontSize: 25 }} />
+                            <RedoOutlinedIcon style={{ fontSize: 20 }} />
                         </button>
                     </div>
                 </section>
