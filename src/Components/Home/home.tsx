@@ -5,11 +5,17 @@ import { carrouselData } from '../../Data/Carrousel';
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 export const Home = () => {
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [fade, setFade] = useState(false);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
 
     const selectNewItem = (next = true) => {
         setFade(true);
@@ -35,6 +41,20 @@ export const Home = () => {
 
     const currentProject = carrouselData[currentIndex];
 
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = (destino: string) => {
+        setAnchorEl(null);
+        if (destino) {
+            const section = document.querySelector(destino);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <>
             <nav>
@@ -48,6 +68,78 @@ export const Home = () => {
                     <a href="#proyects">Proyects</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <div className="burger">
+                    <Button
+                        id="burger-button"
+                        aria-controls={open ? 'burger-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick}
+                    >
+                        <MenuIcon style={{ fontSize: 30, fill: 'white', position: 'relative' }} />
+                    </Button>
+
+                    <Menu
+                        id="burger-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={() => handleClose("")}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'right',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        PaperProps={{
+                            sx: {
+                                width: '15rem',
+                                backdropFilter: 'blur(10px)',
+                                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                                color: 'white',
+                                borderBottomLeftRadius: '10px',
+                                borderBottomRightRadius: '10px',
+                                borderTopLeftRadius: 0,
+                                borderTopRightRadius: 0,
+                                mt: 1.4,
+                                position: 'absolute',
+                                ml: 'auto',
+                                right: '0px',
+                                left: 'unset',
+                                border: '0.5px solid rgba(255, 255, 255, 0.2)',
+                                borderTop: 'none', // <-- quita el borde de arriba
+                                zIndex: 2000, // Asegura que el menú esté por encima de otros elementos
+                            },
+                        }}
+                    >
+                        <MenuItem
+                            onClick={() => handleClose("#about")}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+                        >
+                            About
+                        </MenuItem>
+                        <MenuItem
+                            onClick={() => handleClose("#skills")}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+                        >
+                            Skills
+                        </MenuItem>
+                        <MenuItem
+                            onClick={() => handleClose("#proyects")}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+                        >
+                            Proyects
+                        </MenuItem>
+                        <MenuItem
+                            onClick={() => handleClose("#contact")}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+                        >
+                            Contact
+                        </MenuItem>
+                    </Menu>
+                </div>
+
             </nav>
 
             <div className='home'>
@@ -237,8 +329,8 @@ export const Home = () => {
                                 className="download-btn"
                             >
                                 <div className='download-text'>
-                                <p>Descarga el CV.
-                                </p>
+                                    <p>Descarga el CV.
+                                    </p>
                                     <CloudDownloadOutlinedIcon style={{ fontSize: 30 }} />
 
                                 </div>

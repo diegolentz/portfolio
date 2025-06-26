@@ -4,14 +4,25 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.7rem;
-    border-bottom: 1px solid var(--white-color);
+    font-size: 1.9rem;
+    border: 0.5px solid var(--fondo-color);
     padding: 2rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: var(--white-color);
+    width: 13rem;
+    display: flex;
+    text-align:end;
 }
 
 .nameImg {
@@ -259,8 +270,8 @@ section {
     align-items: center;
     padding: 1rem;
     cursor: pointer;
-    width: 12rem;
-    height: 5rem;
+    width: 10rem;
+    height: 4.5rem;
     border-radius: 2rem;
 
 }
@@ -419,9 +430,14 @@ section {
     }
 }
 
-@media screen and (max-width: 1024px) {
-    /* .descripcion {
-        height: 30rem;
-    } */
+@media screen and (max-width: 600px) {
+    .burger {
+        display: block;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
 
 }
