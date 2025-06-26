@@ -14,7 +14,7 @@ const readApp = new CarrouselData(
     "Read App",
     [
         "Aplicación desarrollada con Angular 17, Kotlin y React.",
-        "Permite gestionar libros leídos, por leer y favoritos, con funcionalidades como búsqueda, valoraciones, clasificación y visualización de detalles.",
+        "Permite gestionar libros leídos, por leer y favoritos, con funcionalidades como búsqueda, valoraciones y clasificación y visualización.",
         "Pensada para mejorar la experiencia de lectura y organización personal."
     ],
     "/readApp.jpeg"
