@@ -2,14 +2,15 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import { useEffect, useState } from 'react';
 import './home.css';
 import { carrouselData } from '../../Data/Carrousel';
+import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
+import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
+import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
 
 export const Home = () => {
 
-    // Renombramos el estado para reflejar que es el índice del proyecto actual
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [fade, setFade] = useState(false);
 
-    // Simplificamos la lógica para seleccionar el item anterior/siguiente
     const selectNewItem = (next = true) => {
         setFade(true);
         setTimeout(() => {
@@ -32,7 +33,6 @@ export const Home = () => {
         return () => clearInterval(interval);
     }, [currentIndex]);
 
-    // Obtenemos el objeto del proyecto actual usando el índice
     const currentProject = carrouselData[currentIndex];
 
     return (
@@ -200,8 +200,12 @@ export const Home = () => {
 
                     </div>
                     <div className="controlers">
-                        <button onClick={previousItem} className="anterior">{'<'}</button>
-                        <button onClick={nextItem} className="siguiente">{'>'}</button>
+                        <button onClick={previousItem} className="anterior">
+                            <UndoOutlinedIcon style={{ fontSize: 25 }} />
+                        </button>
+                        <button onClick={nextItem} className="siguiente">
+                            <RedoOutlinedIcon style={{ fontSize: 25 }} />
+                        </button>
                     </div>
                 </section>
 
@@ -224,7 +228,7 @@ export const Home = () => {
                                 placeholder="Description"
                             />
                             <button className="btn">Send</button>
-                            
+
                         </form>
                         <div className='download'>
                             <a
@@ -232,7 +236,12 @@ export const Home = () => {
                                 download="Diego_Lentz_CV.pdf"
                                 className="download-btn"
                             >
-                                <p>Descarga el cv AQUI</p>
+                                <div className='download-text'>
+                                <p>Descarga el CV.
+                                </p>
+                                    <CloudDownloadOutlinedIcon style={{ fontSize: 30 }} />
+
+                                </div>
                             </a>
                         </div>
                     </div>

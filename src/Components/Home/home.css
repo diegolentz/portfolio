@@ -178,8 +178,8 @@ section {
     margin-bottom: 2rem;
     background-color: var(--fondo-color);
     border-radius: 1rem;
-    padding: 1.5rem;
-    width: 80%;
+    padding: 2rem;
+    width: 100%;
     height: auto;
     position: relative;
 }
@@ -259,24 +259,10 @@ section {
     align-items: center;
     padding: 1rem;
     cursor: pointer;
-    width: 10rem;
+    width: 12rem;
+    height: 5rem;
     border-radius: 2rem;
 
-}
-
-
-
-.verMas {
-    background-color: rgb(137, 209, 28);
-    color: var(--fondo-color);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    font-weight: bold;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
 }
 
 .contact {
@@ -312,20 +298,32 @@ section {
     height: 20rem;
 }
 
+.verMas,
+.btn {
+    background-color: rgb(137, 209, 28);
+    color: var(--fondo-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.6rem;
+    width: 12rem;
+    color: var(--fondo-color);
+    height: 4rem;
+}
 
+.verMas {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+}
 
 .btn {
-
     position: absolute;
     bottom: -5rem;
     right: 0;
-    width: 10rem;
-    height: 3.5rem;
-    border-radius: 2rem;
-    background-color: rgb(137, 209, 28);
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--fondo-color);
 }
 
 .contactDownlad {
@@ -357,6 +355,14 @@ section {
     font-weight: bold;
     font-size: 1.8rem;
     color: black;
+}
+
+.download-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -403,6 +409,13 @@ section {
 
     .campo,
     .subject {
-        width: 100%;
+        width: 80%;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    /* .descripcion {
+        height: 30rem;
+    } */
+
 }
