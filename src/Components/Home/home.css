@@ -40,7 +40,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10rem auto;
+    margin: 10rem auto 0 auto;
     width: 75vw;
     gap: 6rem;
 }
@@ -289,12 +289,13 @@ section {
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    position: relative;
 }
 
 .campo,
 .subject {
-    width: 30rem;
-    height: 4rem;
+    width: 40rem;
+    height: 5rem;
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--fondo-color);
@@ -306,22 +307,46 @@ section {
     height: 20rem;
 }
 
-.download {
-    background-color: #5187df;
-    color: var(--fondo-color);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    font-weight: bold;
-}
 
+
+.btn{
+
+    position: absolute;
+    bottom: -5rem;
+    right: 0;
+    width: 10rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    background-color: rgb(137, 209, 28);
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 .contactDownlad {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 8rem;
     width: 100%;
     margin: 5rem auto;
+}
+
+.download {
+    width:auto;
+    background-color: #5187df;
+    padding: 1.5rem ;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.download a {
+    text-decoration: none;
+    color: black;
+}
+
+.download p {
+    font-weight: bold;
+    font-size: 2rem;
+    color: black;
 }
