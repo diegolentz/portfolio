@@ -1,0 +1,83 @@
+/* 1. Define la animación de entrada */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%); /* Empieza fuera de la pantalla, arriba */
+        opacity: 0;                   /* Completamente transparente */
+    }
+    to {
+        transform: translateY(0);     /* Termina en su posición final */
+        opacity: 1;                   /* Completamente visible */
+    }
+}
+
+/* 2. (Opcional) Define una animación de salida */
+@keyframes fadeOutUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+
+.toast {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0px; 
+    right: 0px; 
+    padding: 1rem 1.5rem;
+    color: white;
+    z-index: 9999;
+    height: 6.5rem;
+    min-width: 45rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideInDown 0.5s ease-out forwards;
+}
+
+.toast.closing {
+    animation: fadeOutUp 0.5s ease-in forwards;
+}
+
+
+.toast-success { background-color: #4caf50; }
+.toast-error { background-color: #f44336; }
+.toast-info { background-color: #2196f3; }
+.toast-warning { background-color: #ff9800; }
+
+.toast-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.toastMsj {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.toast-close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    line-height: 1;
+}
+
+@media  screen and (max-width: 1024px) {
+    .toast {
+        width: 100vw;
+    }
+    
+}

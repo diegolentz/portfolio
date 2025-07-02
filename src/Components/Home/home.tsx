@@ -9,6 +9,8 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useForm } from "react-hook-form";
+import { useToast } from '../../Context/toast/useToast';
 
 export const Home = () => {
 
@@ -16,6 +18,10 @@ export const Home = () => {
     const [fade, setFade] = useState(false);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+    const currentProject = carrouselData[currentIndex];
+    const previousItem = () => selectNewItem(false);
+    const nextItem = () => selectNewItem(true);
+    const { openToast } = useToast();
 
     const selectNewItem = (next = true) => {
         setFade(true);
@@ -27,19 +33,6 @@ export const Home = () => {
             setFade(false);
         }, 500);
     };
-
-    const previousItem = () => selectNewItem(false);
-    const nextItem = () => selectNewItem(true);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextItem();
-        }, 6000);
-
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
-    const currentProject = carrouselData[currentIndex];
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -54,6 +47,31 @@ export const Home = () => {
             }
         }
     };
+
+    const { handleSubmit, register, formState: { errors }, reset } = useForm({
+        mode: "all",
+        defaultValues: {
+            name: '',
+            subject: '',
+            description: ''
+        }
+    })
+
+    const enviar = (data: any) => {
+        openToast(`Mensaje enviado correctamente, gracias ${data.name}`, "success");
+        reset();
+    }
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextItem();
+        }, 6000);
+
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+
 
     return (
         <>
@@ -220,7 +238,7 @@ export const Home = () => {
                     <div className='cards'>
                         {/* Git */}
                         <div className='card'>
-                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
+                            <img src="httpshttps://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
                             <p>Git</p>
                         </div>
                         {/* Docker */}
@@ -306,28 +324,48 @@ export const Home = () => {
                 <section className="contact" id='contact'>
                     <h3>Contacto</h3>
                     <div className="contactDownlad">
-                        <form action="" className='formulario'>
-                            <input
-                                type="text"
-                                className="campo"
-                                placeholder="Name"
-                            />
-                            <input
-                                type="text"
-                                className="campo"
-                                placeholder="Subject"
-                            />
-                            <textarea
-                                className="subject"
-                                placeholder="Description"
-                            />
-                            <button className="btn">Enviar</button>
-
+                        <form onSubmit={handleSubmit(enviar)} className='formulario'>
+                            <div className='input'>
+                                <input
+                                    type="text"
+                                    className="campo"
+                                    placeholder="Nombre"
+                                    {...register("name", {
+                                        required: "Nombre requerido",
+                                        minLength: { value: 4, message: "El nombre debe tener mas de 3 caracteres" }
+                                    })}
+                                />
+                                {errors.name && <p className='error'>{errors.name.message}</p>}
+                            </div>
+                            <div className='input'>
+                                <input
+                                    type="text"
+                                    className="campo"
+                                    placeholder="Asunto"
+                                    {...register("subject", {
+                                        required: "Asunto requerido",
+                                        minLength: { value: 4, message: "El asunto debe tener mas de 3 caracteres" }
+                                    })}
+                                />
+                                {errors.subject && <p className='error'>{errors.subject.message}</p>}
+                            </div>
+                            <div className="textArea">
+                                <textarea
+                                    className="subject"
+                                    placeholder="Descripcion"
+                                    {...register("description", {
+                                        required: "Descripcion requerida",
+                                        minLength: { value: 4, message: "La descripcion debe tener mas de 3 caracteres" }
+                                    })}
+                                />
+                                {errors.description && <p className='error'>{errors.description.message}</p>}
+                            </div>
+                            <button type="submit" className="btn">Enviar</button>
                         </form>
                         <div className='download'>
                             <a
-                                href="/cv.pdf"
-                                download="Diego_Lentz_CV.pdf"
+                                href="/diegoLentzCV2025.pdf"
+                                download="DiegoLentz_CV.pdf"
                                 className="download-btn"
                             >
                                 <div className='download-text'>
