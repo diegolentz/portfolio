@@ -1,37 +1,11 @@
-/* 1. Define la animación de entrada */
-@keyframes slideInDown {
-    from {
-        transform: translateY(-100%); /* Empieza fuera de la pantalla, arriba */
-        opacity: 0;                   /* Completamente transparente */
-    }
-    to {
-        transform: translateY(0);     /* Termina en su posición final */
-        opacity: 1;                   /* Completamente visible */
-    }
-}
-
-/* 2. (Opcional) Define una animación de salida */
-@keyframes fadeOutUp {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-
 .toast {
     position: fixed;
+    top: 0px;
+    right: 0px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    top: 0px; 
-    right: 0px; 
-    padding: 1rem 1.5rem;
+    text-align: center;
     color: white;
     z-index: 9999;
     height: 6.5rem;
@@ -40,44 +14,87 @@
     animation: slideInDown 0.5s ease-out forwards;
 }
 
+
 .toast.closing {
     animation: fadeOutUp 0.5s ease-in forwards;
 }
 
 
-.toast-success { background-color: #4caf50; }
-.toast-error { background-color: #f44336; }
-.toast-info { background-color: #2196f3; }
-.toast-warning { background-color: #ff9800; }
+.toast-success {
+    background-color: #4caf50;
+}
+
+.toast-error {
+    background-color: #f44336;
+}
+
+.toast-info {
+    background-color: #2196f3;
+}
+
+.toast-warning {
+    background-color: #ff9800;
+}
 
 .toast-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
+    width: auto;
 }
 
 .toastMsj {
     font-size: 1.5rem;
     font-weight: bold;
+    margin: 0 auto;
+    width: auto;
 }
 
-.toast-close-btn {
-    background: none;
-    border: none;
-    color: inherit;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0 0.5rem;
-    line-height: 1;
-}
-
-@media  screen and (max-width: 1024px) {
+@media screen and (max-width: 720px) {
     .toast {
-        width: 100vw;
+        width: 100%;
+        min-width: unset;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        padding: 0 1rem;
     }
-    
+
+    .toastMsj {
+        font-size: 1.5rem;
+        width: auto;
+        margin: 0 auto;
+    }
+
+
+
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        /* Empieza fuera de la pantalla, arriba */
+        opacity: 0;
+        /* Completamente transparente */
+    }
+
+    to {
+        transform: translateY(0);
+        /* Termina en su posición final */
+        opacity: 1;
+        /* Completamente visible */
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 }
