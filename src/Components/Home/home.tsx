@@ -238,7 +238,8 @@ export const Home = () => {
                     <div className='cards'>
                         {/* Git */}
                         <div className='card'>
-                            <img src="httpshttps://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
+                           <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
+
                             <p>Git</p>
                         </div>
                         {/* Docker */}
