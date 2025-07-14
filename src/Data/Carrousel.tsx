@@ -1,9 +1,11 @@
 class CarrouselData {
+    id: number;
     titulo: string;
     descripcion: string[];
     imagen: string;
 
-    constructor(titulo: string, descripcion: string[], imagen: string) {
+    constructor(id:number, titulo: string, descripcion: string[], imagen: string) {
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.imagen = imagen;
@@ -11,6 +13,7 @@ class CarrouselData {
 }
 
 const readApp = new CarrouselData(
+    1,                      
     "Read App",
     [
         "Aplicación desarrollada con Angular 17, Kotlin y React.",
@@ -21,6 +24,7 @@ const readApp = new CarrouselData(
 );
 
 const uberto = new CarrouselData(
+    2,
     "Uberto",
     [
         "Plataforma creada con React, Java, PostgreSQL, Redis y Neo4j.",
@@ -31,6 +35,7 @@ const uberto = new CarrouselData(
 );
 
 const eventNexus = new CarrouselData(
+    3,
     "Event Nexus",
     [
         "Aplicación de comunicación interna para empresas, desarrollada con Java, React y PostgreSQL.",
@@ -41,6 +46,7 @@ const eventNexus = new CarrouselData(
 );
 
 const impresiones3D = new CarrouselData(
+    4,
     "Impresiones 3D",
     [
         "Sistema hecho con React, Java y MySQL para la gestión de un taller de impresión 3D.",
@@ -55,3 +61,4 @@ export const carrouselData: CarrouselData[] = [
     eventNexus,
     impresiones3D
 ];
+

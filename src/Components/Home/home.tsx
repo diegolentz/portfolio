@@ -11,6 +11,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useForm } from "react-hook-form";
 import { useToast } from '../../Context/toast/useToast';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
 
@@ -22,6 +23,7 @@ export const Home = () => {
     const previousItem = () => selectNewItem(false);
     const nextItem = () => selectNewItem(true);
     const { openToast } = useToast();
+    const nav = useNavigate();
 
     const selectNewItem = (next = true) => {
         setFade(true);
@@ -62,6 +64,9 @@ export const Home = () => {
         reset();
     }
 
+    const goTo = (id: number) => () => {
+        nav(`/proyect/${id}`);
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -77,7 +82,7 @@ export const Home = () => {
         <>
             <nav>
                 <div className="nameImg">
-                    <PersonPinIcon className="icon" style={{ fontSize: 30 }} />
+                    <PersonPinIcon className="icon" style={{ fontSize: 30}} />
                     <p className="name">Diego Lentz</p>
                 </div>
                 <div className="navLinks">
@@ -304,11 +309,11 @@ export const Home = () => {
                             <h4>{currentProject.titulo}</h4>
                             <div className="descripcion-texto">
                                 {currentProject.descripcion.map((linea, index) => (
-                                    <p key={index}>{linea}</p>
+                                    <p >{linea}</p>
                                 ))}
                             </div>
 
-                            <button className='verMas'>Ver mas</button>
+                            <button className='verMas' onClick={goTo(currentProject.id)}>Ver mas</button>
                         </div>
 
                     </div>

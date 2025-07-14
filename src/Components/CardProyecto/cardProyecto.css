@@ -1,0 +1,63 @@
+.card-proyecto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.cardImagenWrapper {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImagenProyecto {
+  width: 100%;   
+  height: auto;
+  max-height: 50rem;
+  border: 0.5px solid black;
+  border-radius: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.4s, filter 0.4s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: cover;
+}
+
+/* Efecto al pasar el mouse */
+.card-proyecto:hover .cardImagenProyecto {
+  /* transform: scale(1.05); */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.descripcionProyect {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto; /* Menos alto */
+  padding: 1rem;
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s, transform 0.4s;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* Mostrar descripción al hacer hover en la card */
+.card-proyecto:hover .descripcionProyect {
+  opacity: 1;
+  transform: translateY(0%);
+  pointer-events: auto;
+}
