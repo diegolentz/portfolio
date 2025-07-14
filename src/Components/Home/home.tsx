@@ -64,7 +64,7 @@ export const Home = () => {
         reset();
     }
 
-    const goTo = (id: number) => () => {
+    const goTo = (id: number) => {
         nav(`/proyect/${id}`);
     }
 
@@ -313,7 +313,7 @@ export const Home = () => {
                                 ))}
                             </div>
 
-                            <button className='verMas' onClick={goTo(currentProject.id)}>Ver mas</button>
+                            <button className='verMas' onClick={() => goTo(currentProject.id)}>Ver mas</button>
                         </div>
 
                     </div>
