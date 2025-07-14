@@ -308,7 +308,7 @@ export const Home = () => {
                         <div className="descripcion">
                             <h4>{currentProject.titulo}</h4>
                             <div className="descripcion-texto">
-                                {currentProject.descripcion.map((linea, index) => (
+                                {currentProject.descripcion.map((linea) => (
                                     <p >{linea}</p>
                                 ))}
                             </div>
