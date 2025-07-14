@@ -65,7 +65,7 @@ export const Home = () => {
     }
 
     const goTo = (id: number) => {
-        nav(`/proyect/${id}`);
+        nav(`https://portfolio-diego-lentz.netlify.app//proyect/${id}`);
     }
 
     useEffect(() => {
