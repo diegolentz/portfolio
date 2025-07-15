@@ -101,9 +101,9 @@ export const Home = () => {
                         id="burger-button"
                         onClick={handleClick}
                         sx={{
-                            color: 'var(--color-font)',
-                            backgroundColor: 'var(--nav-bg-color)', 
-
+                            // color: 'var(--color-font)',
+                            // backgroundColor: 'var(--nav-bg-color)', 
+                             borderRadius: '1rem'
                         }}
                     >
                         <MenuIcon
