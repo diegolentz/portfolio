@@ -1,16 +1,18 @@
 // src/Components/ProyectosDetalles/proyecto.tsx
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import { Proyecto, proyectosData } from "../../Data/proyectos";
-import { useToast } from "../../Context/toast/useToast";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import MenuIcon from "@mui/icons-material/Menu";
-import PersonPinIcon from "@mui/icons-material/PersonPin";
-import "./proyecto.css";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { useToast } from "../../Context/toast/useToast";
+import { Proyecto, proyectosData } from "../../Data/proyectos";
 import { CardProyecto } from "../CardProyecto/cardProyecto";
+import "./proyecto.css";
+import { useTheme } from '../../Context/theme/ThemeContext';
 
 export const Proyectos = () => {
     const { id } = useParams<{ id: string }>();
@@ -18,6 +20,7 @@ export const Proyectos = () => {
     const [proyecto, setProyecto] = useState<Proyecto | null>(null);
     const { openToast } = useToast();
     const navigate = useNavigate();
+    const { isDark, toggleTheme } = useTheme();
 
     // menú “burger”
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -49,8 +52,11 @@ export const Proyectos = () => {
         <>
             <nav>
                 <div className="nameImg">
-                    <PersonPinIcon fontSize="large" />
                     <p className="name">Diego Lentz</p>
+                    <button className="theme-toggle" onClick={toggleTheme}>
+                        {isDark ? <DarkModeIcon className="icon" /> : <LightModeIcon className="icon" />}
+                        {isDark ? 'Oscuro' : 'Claro'}
+                    </button>
                 </div>
 
                 <div className="navLinks">

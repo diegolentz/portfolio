@@ -1,0 +1,86 @@
+/* Variables para el tema oscuro (por defecto) */
+.dark-theme {
+    --body-color: #0F1A24;
+    --nav-bg-color: rgba(24, 23, 23, 0.527);
+    /* --nav-bg-color: rgba(26, 26, 26, 0.9); */
+    --border-color: #333333;
+    --color-font: #D9D9D9;
+    --container-bg-color: #282B30;
+    --card-bg-color: #2a2a2a;
+    --icon-hover-color: #ffffff;
+    --font-hover-color: black;
+    
+    --primary-bg-color: #0a0a0a;
+    --secondary-bg-color: #1a1a1a;
+    --text-primary-color: #ffffff;
+    --text-secondary-color: #cccccc;
+    --text-muted-color: #999999;
+    --accent-color: #007acc;
+    --hover-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --button-bg-color: #007acc;
+    --button-hover-color: #005a99;
+}
+
+/* Variables para el tema claro */
+.light-theme {
+    --body-color: #D9D9D9;
+    --nav-bg-color: rgba(248, 243, 243, 0.171);
+    --border-color: #6c757d;
+    --color-font: black;
+    --container-bg-color: #afa9a9;
+    --card-bg-color: #9c1a1a25;
+    --icon-hover-color: #0a0a0a;
+    --font-hover-color: white;
+    
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #f8f9fa;
+    --text-primary-color: #212529;
+    --text-secondary-color: #495057;
+    --text-muted-color: #6c757d;
+    --accent-color: #010202;
+    --hover-color: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-bg-color: #007acc;
+    --button-hover-color: #005a99;
+}
+
+
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggle {
+    background: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+    transform: translateY(-1px);
+}
+
+.theme-toggle .icon {
+    font-size: 18px !important;
+}
+
+nav {
+    background-color: var(--nav-bg-color) !important;
+    backdrop-filter: blur(10px);
+}
+
+.verMas {
+    background-color: var(--button-bg-color) !important;
+    color: white !important;
+}
+
+.verMas:hover {
+    background-color: var(--button-hover-color) !important;
+}
