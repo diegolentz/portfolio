@@ -10,17 +10,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    gap: var(--gap-home);
 }
 
 .tituloProyecto {
     font-size: 3rem;
+    color: var(--color-font);
 }
 
 .imagenesProyectos{
     display: grid;
     place-items: center;
     justify-content: center;
-    width: 90vw;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 45rem));
+    width: 80vw;
+    grid-template-columns: repeat(auto-fit,40rem);
+    gap: var(--gap-article);
 }

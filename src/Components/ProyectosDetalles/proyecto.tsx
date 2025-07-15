@@ -89,22 +89,32 @@ export const Proyectos = () => {
                         id="burger-menu"
                         anchorEl={anchorEl}
                         open={open}
-                        onClose={handleClose}
-                        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                        transformOrigin={{ vertical: "top", horizontal: "right" }}
+                        onClose={() => handleClose()}
+                         anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'right',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
                         PaperProps={{
-                            sx: {
-                                width: "15rem",
-                                backdropFilter: "blur(10px)",
-                                backgroundColor: "rgba(0, 0, 0, 0.6)",
-                                color: "white",
-                                borderBottomLeftRadius: "10px",
-                                borderBottomRightRadius: "10px",
-                                mt: 1.4,
-                                position: "absolute",
-                                right: 0,
-                                border: "0.5px solid rgba(255, 255, 255, 0.2)",
-                                borderTop: "none",
+                           sx: {
+                                width: '15rem',
+                                backdropFilter: 'blur(10px)',
+                                backgroundColor: 'var(--nav-bg-color)',
+                                color: 'var(--color-font)',
+                                borderBottomLeftRadius: '10px',
+                                borderBottomRightRadius: '10px',
+                                borderTopLeftRadius: 0,
+                                borderTopRightRadius: 0,
+                                mt: 1.9,
+                                position: 'absolute',
+                                ml: 'auto',
+                                right: '0px',
+                                left: 'unset',
+                                border: 'var(--border-color) solid 0.5px',
+                                borderTop: 'none',
                                 zIndex: 2000,
                             },
                         }}

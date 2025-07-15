@@ -136,7 +136,7 @@ export const Home = () => {
                                 borderBottomRightRadius: '10px',
                                 borderTopLeftRadius: 0,
                                 borderTopRightRadius: 0,
-                                mt: 1.4,
+                                mt: 1.9,
                                 position: 'absolute',
                                 ml: 'auto',
                                 right: '0px',
@@ -334,7 +334,7 @@ export const Home = () => {
                                 ))}
                             </div>
 
-                            <button className='verMas' onClick={() => goTo(currentProject.id)}>Ver mas</button>
+                            <button className='verMasButton' onClick={() => goTo(currentProject.id)}>Ver mas</button>
                         </div>
 
                     </div>
