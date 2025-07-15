@@ -80,7 +80,7 @@ export const Proyectos = () => {
                         onClick={handleClick}
                         sx={{
                             color: 'var(--color-font)',
-                            backgroundColor: 'var(--nav-bg-color)',
+                            backgroundColor: 'var(--container-bg-color)',
 
                         }}
                     >
