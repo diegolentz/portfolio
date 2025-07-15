@@ -131,7 +131,7 @@ export const Home = () => {
                             sx: {
                                 width: '15rem',
                                 backdropFilter: 'blur(10px)',
-                                backgroundColor: 'var(--nav-bg-color)',
+                                backgroundColor: 'var(--container-bg-color)',
                                 color: 'var(--color-font)',
                                 borderBottomLeftRadius: '10px',
                                 borderBottomRightRadius: '10px',
@@ -152,25 +152,25 @@ export const Home = () => {
                             onClick={() => handleClose("#about")}
                             sx={{ fontSize: '1.5rem', fontWeight: 600 }}
                         >
-                            About
+                            Sobre mi
                         </MenuItem>
                         <MenuItem
                             onClick={() => handleClose("#skills")}
                             sx={{ fontSize: '1.5rem', fontWeight: 600 }}
                         >
-                            Skills
+                            Habilidades
                         </MenuItem>
                         <MenuItem
                             onClick={() => handleClose("#proyects")}
                             sx={{ fontSize: '1.5rem', fontWeight: 600 }}
                         >
-                            Proyects
+                            Proyectos
                         </MenuItem>
                         <MenuItem
                             onClick={() => handleClose("#contact")}
                             sx={{ fontSize: '1.5rem', fontWeight: 600 }}
                         >
-                            Contact
+                            Contacto
                         </MenuItem>
                         <MenuItem
                             onClick={() => {

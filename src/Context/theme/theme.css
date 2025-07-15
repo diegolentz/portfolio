@@ -11,18 +11,7 @@
     --font-hover-color: black;
     --button-bg-color: #007acc;
     --button-hover-color: #005a99; 
-    --descripcion-bg-color: #0c0c0ce0;
-    
-    /* 
-    --primary-bg-color: #0a0a0a;
-    --hover-color: #333333;
-    --text-secondary-color: #cccccc;
-    --text-muted-color: #999999;
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --accent-color: #007acc;
-    --secondary-bg-color: #1a1a1a;
-    --text-primary-color: #ffffff;
-    */
+    --descripcion-bg-color: #0c0c0ce0;   
 }
 
 /* Variables para el tema claro */
@@ -37,14 +26,6 @@
     --font-hover-color: white;
     --text-secondary-color: #495057;
     --descripcion-bg-color: #d4b6b6f5;
-    
-    /* --primary-bg-color: #ffffff;
-    --secondary-bg-color: #f8f9fa;
-    --text-primary-color: #212529;
-    --text-muted-color: #6c757d;
-    --accent-color: #010202;
-    --hover-color: #f8f9fa;
-    --shadow-color: rgba(0, 0, 0, 0.1); */
     --button-bg-color: #5187df;
 }
 
@@ -52,7 +33,7 @@
 
 /* Estilos para el botón de cambio de tema */
 .theme-toggle {
-    background: var(--card-bg-color);
+    background: var(--container-bg-color);
     border: 1px solid var(--border-color);
     color: var(--icon-hover-color);
     border-radius: 8px;

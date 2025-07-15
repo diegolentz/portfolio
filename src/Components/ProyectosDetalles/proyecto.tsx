@@ -127,16 +127,27 @@ export const Proyectos = () => {
                         }}
                     >
                         <MenuItem onClick={handleClose} component={HashLink} smooth to="/home#about" sx={{ fontSize: "1.5rem", fontWeight: 600 }}>
-                            About
+                                                        Sobre mi
                         </MenuItem>
                         <MenuItem onClick={handleClose} component={HashLink} smooth to="/home#skills" sx={{ fontSize: "1.5rem", fontWeight: 600 }}>
-                            Skills
+                                                        Habilidades
+                            
                         </MenuItem>
                         <MenuItem onClick={handleClose} component={HashLink} smooth to="/home#proyects" sx={{ fontSize: "1.5rem", fontWeight: 600 }}>
                             Proyectos
                         </MenuItem>
                         <MenuItem onClick={handleClose} component={HashLink} smooth to="/home#contact" sx={{ fontSize: "1.5rem", fontWeight: 600 }}>
                             Contacto
+                        </MenuItem>
+                         <MenuItem
+                            onClick={() => {
+                                toggleTheme();
+                                handleClose();
+                            }}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 }}
+                        >
+                            {isDark ? <LightModeIcon /> : <DarkModeIcon />}
+                            {isDark ? 'Claro' : 'Oscuro'}
                         </MenuItem>
                     </Menu>
                 </div>
