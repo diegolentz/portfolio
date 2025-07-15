@@ -77,12 +77,19 @@ export const Proyectos = () => {
                 <div className="burger">
                     <Button
                         id="burger-button"
-                        aria-controls={open ? "burger-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
                         onClick={handleClick}
+                        sx={{
+                            color: 'var(--color-font)',
+                            backgroundColor: 'var(--nav-bg-color)',
+
+                        }}
                     >
-                        <MenuIcon fontSize="large" sx={{ color: "white" }} />
+                        <MenuIcon
+                            sx={{
+                                fontSize: 30,
+                                color: 'var(--color-font)',
+                            }}
+                        />
                     </Button>
 
                     <Menu
@@ -90,7 +97,7 @@ export const Proyectos = () => {
                         anchorEl={anchorEl}
                         open={open}
                         onClose={() => handleClose()}
-                         anchorOrigin={{
+                        anchorOrigin={{
                             vertical: 'bottom',
                             horizontal: 'right',
                         }}
@@ -99,7 +106,7 @@ export const Proyectos = () => {
                             horizontal: 'right',
                         }}
                         PaperProps={{
-                           sx: {
+                            sx: {
                                 width: '15rem',
                                 backdropFilter: 'blur(10px)',
                                 backgroundColor: 'var(--nav-bg-color)',

@@ -86,7 +86,7 @@ export const Home = () => {
                 <div className="nameImg">
                     <p className="name">Diego Lentz</p>
                     <button className="theme-toggle" onClick={toggleTheme}>
-                        {isDark ?  <DarkModeIcon className="icon" /> : <LightModeIcon className="icon" />}
+                        {isDark ? <DarkModeIcon className="icon" /> : <LightModeIcon className="icon" />}
                         {isDark ? 'Oscuro' : 'Claro'}
                     </button>
                 </div>
@@ -99,16 +99,17 @@ export const Home = () => {
                 <div className="burger">
                     <Button
                         id="burger-button"
-                        aria-controls={open ? 'burger-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
                         onClick={handleClick}
+                        sx={{
+                            color: 'var(--color-font)',
+                            backgroundColor: 'var(--nav-bg-color)', 
+
+                        }}
                     >
                         <MenuIcon
-                            style={{
+                            sx={{
                                 fontSize: 30,
-                                color: 'var(--color-font)', // Usa 'color' en vez de 'fill'
-                                position: 'relative'
+                                color: 'var(--color-font)',
                             }}
                         />
                     </Button>
@@ -264,7 +265,7 @@ export const Home = () => {
                     <div className='cards'>
                         {/* Git */}
                         <div className='card'>
-                           <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
+                            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="60" height="60" />
 
                             <p>Git</p>
                         </div>
