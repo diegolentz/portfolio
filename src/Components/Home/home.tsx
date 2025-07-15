@@ -1,17 +1,19 @@
-import PersonPinIcon from '@mui/icons-material/PersonPin';
-import { useEffect, useState } from 'react';
-import './home.css';
-import { carrouselData } from '../../Data/Carrousel';
-import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
-import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
-import Button from '@mui/material/Button';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
+import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
+import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
+import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { useToast } from '../../Context/toast/useToast';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../../Context/theme/ThemeContext';
+import { useToast } from '../../Context/toast/useToast';
+import { carrouselData } from '../../Data/Carrousel';
+import './home.css';
 
 export const Home = () => {
 
@@ -24,6 +26,7 @@ export const Home = () => {
     const nextItem = () => selectNewItem(true);
     const { openToast } = useToast();
     const nav = useNavigate();
+    const { isDark, toggleTheme } = useTheme();
 
     const selectNewItem = (next = true) => {
         setFade(true);
@@ -77,13 +80,15 @@ export const Home = () => {
     }, [currentIndex]);
 
 
-
     return (
         <>
             <nav>
                 <div className="nameImg">
-                    <PersonPinIcon className="icon" style={{ fontSize: 30}} />
                     <p className="name">Diego Lentz</p>
+                    <button className="theme-toggle" onClick={toggleTheme}>
+                        {isDark ?  <DarkModeIcon className="icon" /> : <LightModeIcon className="icon" />}
+                        {isDark ? 'Oscuro' : 'Claro'}
+                    </button>
                 </div>
                 <div className="navLinks">
                     <a href="#about">Sobre mi</a>
@@ -99,7 +104,13 @@ export const Home = () => {
                         aria-expanded={open ? 'true' : undefined}
                         onClick={handleClick}
                     >
-                        <MenuIcon style={{ fontSize: 30, fill: 'white', position: 'relative' }} />
+                        <MenuIcon
+                            style={{
+                                fontSize: 30,
+                                color: 'var(--color-font)', // Usa 'color' en vez de 'fill'
+                                position: 'relative'
+                            }}
+                        />
                     </Button>
 
                     <Menu
@@ -119,8 +130,8 @@ export const Home = () => {
                             sx: {
                                 width: '15rem',
                                 backdropFilter: 'blur(10px)',
-                                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                                color: 'white',
+                                backgroundColor: 'var(--nav-bg-color)',
+                                color: 'var(--color-font)',
                                 borderBottomLeftRadius: '10px',
                                 borderBottomRightRadius: '10px',
                                 borderTopLeftRadius: 0,
@@ -130,7 +141,7 @@ export const Home = () => {
                                 ml: 'auto',
                                 right: '0px',
                                 left: 'unset',
-                                border: '0.5px solid rgba(255, 255, 255, 0.2)',
+                                border: 'var(--border-color) solid 0.5px',
                                 borderTop: 'none',
                                 zIndex: 2000,
                             },
@@ -159,6 +170,16 @@ export const Home = () => {
                             sx={{ fontSize: '1.5rem', fontWeight: 600 }}
                         >
                             Contact
+                        </MenuItem>
+                        <MenuItem
+                            onClick={() => {
+                                toggleTheme();
+                                handleClose("");
+                            }}
+                            sx={{ fontSize: '1.5rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 }}
+                        >
+                            {isDark ? <LightModeIcon /> : <DarkModeIcon />}
+                            {isDark ? 'Claro' : 'Oscuro'}
                         </MenuItem>
                     </Menu>
                 </div>

@@ -40,8 +40,8 @@
   width: 100%;
   height: auto; /* Menos alto */
   padding: 1rem;
-  background: rgba(20, 20, 20, 0.95);
-  color: #fff;
+  background: var(--container-bg-color);
+  color: var(--color-font);
   font-size: 1.4rem;
   display: flex;
   justify-content: center;
