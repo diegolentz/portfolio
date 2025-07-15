@@ -3,7 +3,7 @@
     --body-color: #0F1A24;
     --nav-bg-color: rgba(24, 23, 23, 0.527);
     /* --nav-bg-color: rgba(26, 26, 26, 0.9); */
-    --border-color: #333333;
+    --border-color: #343a40;
     --color-font: #D9D9D9;
     --container-bg-color: #282B30;
     --card-bg-color: #2a2a2a;
@@ -11,22 +11,22 @@
     --font-hover-color: black;
     --button-bg-color: #007acc;
     --button-hover-color: #005a99; 
-    --descripcion-bg-color: #0c0c0ce0;   
+    --descripcion-bg-color: #282B30;   
 }
 
 /* Variables para el tema claro */
 .light-theme {
-    --body-color: #D9D9D9;
+    --body-color: #e2e2e2;
     --nav-bg-color: rgba(248, 243, 243, 0.171);
     --border-color: #6c757d;
     --color-font: black;
-    --container-bg-color: #afa9a9;
+    --container-bg-color: #d6ccc2;
     --card-bg-color: #9c1a1a25;
     --icon-hover-color: #0a0a0a;
     --font-hover-color: white;
     --text-secondary-color: #495057;
-    --descripcion-bg-color: #d4b6b6f5;
-    --button-bg-color: #5187df;
+    --descripcion-bg-color: #d6ccc2;
+    --button-bg-color: #0077b6;
 }
 
 
