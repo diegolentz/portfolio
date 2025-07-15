@@ -18,11 +18,11 @@
     color: var(--color-font);
 }
 
-.imagenesProyectos{
+.imagenesProyectos {
     display: grid;
     place-items: center;
     justify-content: center;
     width: 80vw;
-    grid-template-columns: repeat(auto-fit,40rem);
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: var(--gap-article);
 }
