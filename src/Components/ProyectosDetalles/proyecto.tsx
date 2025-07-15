@@ -106,7 +106,7 @@ export const Proyectos = () => {
                             horizontal: 'right',
                         }}
                         PaperProps={{
-                            sx: {
+                           sx: {
                                 width: '15rem',
                                 backdropFilter: 'blur(10px)',
                                 backgroundColor: 'var(--nav-bg-color)',
@@ -115,7 +115,7 @@ export const Proyectos = () => {
                                 borderBottomRightRadius: '10px',
                                 borderTopLeftRadius: 0,
                                 borderTopRightRadius: 0,
-                                mt: 1.9,
+                                mt: 1.6,
                                 position: 'absolute',
                                 ml: 'auto',
                                 right: '0px',
